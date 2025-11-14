@@ -1,0 +1,118 @@
+
+
+body {
+  background-image: url(/images/pokemonfield.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 5rem;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #7fac71ff;
+}
+
+.pokedex-title {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #ffcb05; 
+  text-shadow:
+    -4px -4px 0 #3d7dca,   
+     4px -4px 0 #3d7dca,   
+    -4px  4px 0 #3d7dca,   
+     4px  4px 0 #3d7dca,   
+     0 0 25px #003a70;    
+  margin-top: 10rem; 
+  margin-bottom: 10rem;
+  text-align: center;
+  animation: titleGlow 2.5s infinite alternate;
+}
+
+
+
+.search-bar {
+  width: 650px;
+  max-width: 80vw;
+  height: 70px;
+  font-size: 2rem;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  text-align: left;
+  
+}
+
+.search-bar::placeholder {
+  text-align: center; 
+  color: #aaa;        
+}
+
+.nav-link {
+  font-weight: 500;
+  color: black !important;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  filter: invert(1);
+}
+
+
+/* Pokemon Search bar extras*/
+
+#pokemon-result {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  margin-top: 1rem;                    
+  align-items: center;        
+  justify-content: center;    
+  gap: 2rem;                  
+  width: auto;                
+  max-width: 90%;            
+  margin-left: auto;          
+  margin-right: auto;         
+}
+
+
+.pokemon-item {
+  display: flex;            
+  align-items: center;     
+  gap: 1rem;                
+  margin-bottom: 1rem;      
+}
+
+.pokemon-img {
+  width: 150px;             
+  height: 150px;
+  object-fit: contain;
+}
+
+.pokemon-name {
+  font-size: 2rem;         
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.pokemon-link {
+  display: flex;           
+  flex-direction: row;      
+  align-items: center;      
+  gap: 1rem;                
+  text-decoration: none;    
+  color: inherit;           
+  width: 100%;              
+}
+/* Pokemon Background*/
+.pokemon {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* pokedex styling*/
