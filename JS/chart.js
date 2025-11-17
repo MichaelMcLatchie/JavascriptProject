@@ -1,4 +1,9 @@
 /* global Chart */
+Chart.defaults.backgroundColor = '#000';
+Chart.defaults.borderColor = '#000';
+Chart.defaults.color = '#000';
+Chart.defaults.font.size = '20';
+Chart.defaults.font.weight = 'bold';
 let chart;
 
 function renderPokemonStatsChart(pokemonData, pokemonName) {
