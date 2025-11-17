@@ -1,13 +1,8 @@
 // Grab elements
-const searchPokemon = document.getElementById('pokemon-search');
-const results = document.getElementById('pokemon-result');
+const searchPokemon = document.getElementById('pokemon-search-pokedex');
+const results = document.querySelector('.pokemon-result-pokedex');
 
 let allPokemon = [];
-
-// this stops the dumb blob of CSS that starts on loadup.
-document.addEventListener('DOMContentLoaded', () => {
-  results.style.display = 'none'; 
-});
 
 // fetch all pokemon 
 async function loadAllPokemon() {
@@ -41,7 +36,7 @@ searchPokemon.addEventListener('input', async () => {
   // Filter top 5 matches
   const matches = allPokemon
     .filter(pokemon => pokemon.name.toLowerCase().startsWith(query))
-    .slice(0, 100);
+    .slice(0, 5);
 
   // Display matches
   for (let pokemon of matches) {
@@ -50,20 +45,20 @@ searchPokemon.addEventListener('input', async () => {
   // Href element for search bar, mayne encode uri component, (mr. Mime, nidoran m and f may break)
     const pokemonDiv = document.createElement('a');
     pokemonDiv.href = `pokedex.html?name=${encodeURIComponent(pokemon.name)}`;
-    pokemonDiv.classList.add('pokemon-link');
+    pokemonDiv.classList.add('pokemon-link-pokedex');
   
   //img
   // const sprite = pokemon.sprites.front_default;
     const img = document.createElement('img');
     img.src = pokemon.sprites.front_default;
-    img.classList.add('pokemon-img');
+    img.classList.add('pokemon-img-pokedex');
 
     // name text
     // const name = pokemon.name;
     
     const span = document.createElement('span');
     span.textContent = pokemon.name;
-    span.classList.add('pokemon-name');
+    span.classList.add('pokemon-name-pokedex');
     pokemonDiv.appendChild(img);
     pokemonDiv.appendChild(span);
    
