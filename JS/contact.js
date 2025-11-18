@@ -1,3 +1,7 @@
+// Michael McLatchie Contact.js
+// The goal of this file is to take data from a html form, and turn it into a text file that is downloaded Shows success/error alert, validates the form
+
+
 document.addEventListener("DOMContentLoaded", () => {
 	const form = document.getElementById("contactForm");
 	const container = document.querySelector(".container");
@@ -8,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	form.addEventListener("submit", (e) => {
-		e.preventDefault(); // always prevent default
+		e.preventDefault(); // always prevent refresh
 
 		// Add Bootstrap validation styling
 		form.classList.add("was-validated");
@@ -80,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			throw err;
 		}
 	}
-
+	// formats submission into a text file
 	function formatSubmissionText(submission) {
 		const lines = [
 			`Contact Form Submission`,
@@ -119,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			${message}
 			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 		`;
-		// Insert alert above the card
+		// Insert alert above the card, currently does the side of the card... whoops
 		container.prepend(alert);
 	}
 });

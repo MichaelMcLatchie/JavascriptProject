@@ -1,4 +1,11 @@
 /* global Chart */
+// this is put in because line24 was showing an error that wasnt an error
+
+// Michael McLatchie chart.js
+// Sets Chart.js styling defaults, then builds and displays a bar chart of a Pokemons base stats
+
+
+// Sets global chart.js defaults
 Chart.defaults.backgroundColor = '#000';
 Chart.defaults.borderColor = '#000';
 Chart.defaults.color = '#000';
@@ -6,6 +13,7 @@ Chart.defaults.font.size = '20';
 Chart.defaults.font.weight = 'bold';
 let chart;
 
+// Draws pokemon stat chart
 function renderPokemonStatsChart(pokemonData, pokemonName) {
     const context = document.getElementById('pokemonChart').getContext('2d');
     if (!pokemonData || !pokemonData.stats) return;
@@ -17,7 +25,7 @@ function renderPokemonStatsChart(pokemonData, pokemonName) {
 
     const labels = Object.keys(stats);
     const values = Object.values(stats);
-
+    // destroys old chart if it still exists (they were doubling up)
     if (chart) chart.destroy();
 
     chart = new Chart(context, {

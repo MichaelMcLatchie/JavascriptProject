@@ -1,3 +1,7 @@
+// Michael McLatchie Pokedex.js
+// Reads pokemon data from url, fetches corresponding data from API, cleans up flavour text
+// stores all pokemon info into a class, updates html with data
+
 // Get the Pokémon name from URL
 const urlParams = new URLSearchParams(window.location.search);
 const pokemonName = urlParams.get('name'); 
